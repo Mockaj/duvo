@@ -9,3 +9,10 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     session_id: str
+
+
+class EvaluationResult(BaseModel):
+    session_id: str
+    score: int
+    reasoning: str
+    timestamp: str

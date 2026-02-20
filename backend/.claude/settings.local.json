@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Context7__resolve-library-id",
+      "Bash(uv run python -c \"from app.evaluation import maybe_trigger_evaluation, extract_hn_tool_data, extract_summary, judge_agent; print\\(''evaluation.py OK''\\)\")",
+      "Bash(uv run python -c \"from dotenv import load_dotenv; load_dotenv\\(\\); from app.main import app; routes = [r.path for r in app.routes]; print\\(routes\\); assert ''/api/evaluations/{session_id}'' in routes, ''Missing evaluations route''; print\\(''All routes OK''\\)\")"
+    ]
+  }
+}

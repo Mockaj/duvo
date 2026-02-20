@@ -1,0 +1,8 @@
+[
+  {
+    "session_id": "73500c43-f59c-42e7-bebd-f8637adabacb",
+    "score": 22,
+    "reasoning": "The summary has several serious issues when evaluated against the source data:\n\n**Accuracy (Poor):** The \"Top AI News from the Web\" section is entirely fabricated \u2014 it lists Reuters, Crescendo AI, WEF, CNN, TIME, and Stanford HAI articles that do not appear anywhere in the source data. These are hallucinated entries. The \"Trending on Hacker News\" section is partially accurate for the 5 AI-related items it includes, but the scores and titles are correct only for those entries.\n\n**Completeness (Poor):** The source data contains 10 items, including non-AI stories like \"Web Components: The Framework-Free Renaissance,\" \"Defer available in gcc and clang,\" \"The Rediscovery of 103 Hokusai Lost Sketches,\" and \"That irritating feeling France was right.\" These are entirely omitted, which is a significant gap. The summary selectively filters only AI-related Hacker News stories without acknowledging it's doing so.\n\n**Conciseness (Mixed):** The summary is reasonably formatted but bloated with fabricated content that shouldn't exist at all.\n\n**Relevance (Poor):** The invented \"Top AI News from the Web\" section is completely irrelevant to the source data provided. The summary also falsely references a CSV download, which has no basis in the source data.\n\n**Overall:** The summary fabricates an entire section of content not present in the source, omits non-AI stories from the source, and adds fictional elements (CSV download). Only the 5 Hacker News AI entries with correct scores represent accurate summarization of the source. This is a critically flawed summary.",
+    "timestamp": "2026-02-20T13:30:24.491616+00:00"
+  }
+]

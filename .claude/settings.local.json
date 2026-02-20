@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/mockaj/Code/duvo log --oneline -5)",
+      "mcp__claude_ai_Context7__resolve-library-id",
+      "mcp__claude_ai_Context7__query-docs",
+      "WebFetch(domain:ai.pydantic.dev)",
+      "WebFetch(domain:logfire.pydantic.dev)",
+      "Bash(git add docs/plans/2026-02-20-chat-app-plan.md)",
+      "Bash(git commit:*)",
+      "Bash(uv run python -c \"import fastapi; import pydantic_ai; import logfire; print\\(''deps OK''\\)\")",
+      "Bash(npm install tailwindcss @tailwindcss/vite)",
+      "Bash(uv run python -c \"from app.models import ChatRequest, ChatResponse; print\\(''imports OK''\\)\")",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(git add frontend/)",
+      "Bash(curl -s -X POST http://localhost:8000/api/chat -H \"Content-Type: application/json\" -d '{\"\"message\"\": \"\"What did I just ask you?\"\", \"\"session_id\"\": \"\"test-123\"\"}')",
+      "Bash(curl -s -X POST http://localhost:8000/api/chat -H \"Content-Type: application/json\" -d '{\"\"message\"\": \"\"What did I ask before?\"\", \"\"session_id\"\": \"\"fresh-session-456\"\"}')",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -s https://raw.githubusercontent.com/YinTokey/mcp_hackernews/main/README.md)",
+      "Bash(curl -s https://api.github.com/repos/YinTokey/mcp_hackernews/contents/)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(uv run python -c \":*)",
+      "Bash(uv sync)",
+      "Bash(uv run pip show mcp-hackernews)",
+      "Bash(uv run pip show mcp_hackernews)",
+      "Bash(curl -s https://raw.githubusercontent.com/YinTokey/mcp_hackernews/main/pyproject.toml)",
+      "Bash(uv add mcp-hackernews)",
+      "Bash(uv run python -c \"from app.agent import agent; print\\(''agent imports OK''\\)\")",
+      "Bash(uv run which mcp-hackernews)"
+    ]
+  }
+}

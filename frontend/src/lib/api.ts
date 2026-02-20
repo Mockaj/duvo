@@ -8,7 +8,7 @@ interface ChatResponse {
   session_id: string;
 }
 
-const API_BASE = "http://localhost:8000";
+export const API_BASE = "http://localhost:8000";
 
 export async function sendMessage(
   message: string,

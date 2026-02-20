@@ -3,11 +3,57 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { sendMessage } from "@/lib/api";
+import { sendMessage, API_BASE } from "@/lib/api";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
+}
+
+const DOWNLOAD_REGEX = /\[DOWNLOAD:([\w\-\.]+\.csv)\]/g;
+
+function renderMessageContent(content: string) {
+  const parts: (string | { filename: string })[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = DOWNLOAD_REGEX.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(content.slice(lastIndex, match.index));
+    }
+    parts.push({ filename: match[1] });
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < content.length) {
+    parts.push(content.slice(lastIndex));
+  }
+
+  if (parts.length === 0) {
+    return content;
+  }
+
+  return parts.map((part, i) => {
+    if (typeof part === "string") {
+      return <span key={i}>{part}</span>;
+    }
+    return (
+      <Button
+        key={i}
+        variant="outline"
+        size="sm"
+        className="mx-1 inline-flex"
+        asChild
+      >
+        <a
+          href={`${API_BASE}/api/downloads/${part.filename}`}
+          download
+        >
+          Download {part.filename}
+        </a>
+      </Button>
+    );
+  });
 }
 
 export function Chat() {
@@ -82,7 +128,7 @@ export function Chat() {
                       : "bg-muted"
                   }`}
                 >
-                  {msg.content}
+                  {renderMessageContent(msg.content)}
                 </div>
               </div>
             ))}
